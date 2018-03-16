@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ObjectProtocol` trait in crate `pyo3`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ObjectProtocol">
+
+    <title>pyo3::prelude::ObjectProtocol - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
+          id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Trait ObjectProtocol</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.hasattr">hasattr</a><a href="#tymethod.getattr">getattr</a><a href="#tymethod.setattr">setattr</a><a href="#tymethod.delattr">delattr</a><a href="#tymethod.compare">compare</a><a href="#tymethod.rich_compare">rich_compare</a><a href="#tymethod.repr">repr</a><a href="#tymethod.str">str</a><a href="#tymethod.is_callable">is_callable</a><a href="#tymethod.call">call</a><a href="#tymethod.call0">call0</a><a href="#tymethod.call1">call1</a><a href="#tymethod.call_method">call_method</a><a href="#tymethod.call_method0">call_method0</a><a href="#tymethod.call_method1">call_method1</a><a href="#tymethod.hash">hash</a><a href="#tymethod.is_true">is_true</a><a href="#tymethod.is_none">is_none</a><a href="#tymethod.len">len</a><a href="#tymethod.get_item">get_item</a><a href="#tymethod.set_item">set_item</a><a href="#tymethod.del_item">del_item</a><a href="#tymethod.iter">iter</a><a href="#tymethod.get_type">get_type</a><a href="#tymethod.get_base">get_base</a><a href="#tymethod.get_mut_base">get_mut_base</a><a href="#tymethod.cast_as">cast_as</a><a href="#tymethod.extract">extract</a><a href="#tymethod.get_refcnt">get_refcnt</a><a href="#tymethod.None">None</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>pyo3</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'ObjectProtocol', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>pyo3</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="trait" href=''>ObjectProtocol</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/pyo3/objectprotocol.rs.html#20-176' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait ObjectProtocol {
+    fn <a href='#tymethod.hasattr' class='fnname'>hasattr</a>&lt;N&gt;(&amp;self, attr_name: N) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.getattr' class='fnname'>getattr</a>&lt;N&gt;(&amp;self, attr_name: N) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.setattr' class='fnname'>setattr</a>&lt;N, V&gt;(&amp;self, attr_name: N, value: V) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.delattr' class='fnname'>delattr</a>&lt;N&gt;(&amp;self, attr_name: N) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.compare' class='fnname'>compare</a>&lt;O&gt;(&amp;self, other: O) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html" title="enum core::cmp::Ordering">Ordering</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.rich_compare' class='fnname'>rich_compare</a>&lt;O&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other: O, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compare_op: <a class="enum" href="../../pyo3/class/enum.CompareOp.html" title="enum pyo3::class::CompareOp">CompareOp</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.repr' class='fnname'>repr</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyString.html" title="struct pyo3::PyString">PyString</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.str' class='fnname'>str</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyString.html" title="struct pyo3::PyString">PyString</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_callable' class='fnname'>is_callable</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.call' class='fnname'>call</a>&lt;A, K&gt;(&amp;self, args: A, kwargs: K) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/trait.IntoPyDictPointer.html" title="trait pyo3::IntoPyDictPointer">IntoPyDictPointer</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.call0' class='fnname'>call0</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.call1' class='fnname'>call1</a>&lt;A&gt;(&amp;self, args: A) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.call_method' class='fnname'>call_method</a>&lt;A, K&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args: A, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kwargs: K<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/trait.IntoPyDictPointer.html" title="trait pyo3::IntoPyDictPointer">IntoPyDictPointer</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.call_method0' class='fnname'>call_method0</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.call_method1' class='fnname'>call_method1</a>&lt;A:&nbsp;<a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args: A<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.hash' class='fnname'>hash</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_true' class='fnname'>is_true</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_none' class='fnname'>is_none</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_item' class='fnname'>get_item</a>&lt;K&gt;(&amp;self, key: K) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_item' class='fnname'>set_item</a>&lt;K, V&gt;(&amp;self, key: K, value: V) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.del_item' class='fnname'>del_item</a>&lt;K&gt;(&amp;self, key: K) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="struct" href="../../pyo3/struct.PyIterator.html" title="struct pyo3::PyIterator">PyIterator</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_type' class='fnname'>get_type</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../pyo3/struct.PyType.html" title="struct pyo3::PyType">PyType</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_base' class='fnname'>get_base</a>(&amp;self) -&gt; &amp;Self::<a class="type" href="../../pyo3/typeob/trait.PyTypeInfo.html#associatedtype.BaseType" title="type pyo3::typeob::PyTypeInfo::BaseType">BaseType</a><br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_mut_base' class='fnname'>get_mut_base</a>(&amp;self) -&gt; &amp;mut Self::<a class="type" href="../../pyo3/typeob/trait.PyTypeInfo.html#associatedtype.BaseType" title="type pyo3::typeob::PyTypeInfo::BaseType">BaseType</a><br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a></span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.cast_as' class='fnname'>cast_as</a>&lt;'a, D&gt;(&amp;'a self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>D, &lt;D as <a class="trait" href="../../pyo3/prelude/trait.PyTryFrom.html" title="trait pyo3::prelude::PyTryFrom">PyTryFrom</a>&gt;::<a class="type" href="../../pyo3/prelude/trait.PyTryFrom.html#associatedtype.Error" title="type pyo3::prelude::PyTryFrom::Error">Error</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D: <a class="trait" href="../../pyo3/prelude/trait.PyTryFrom.html" title="trait pyo3::prelude::PyTryFrom">PyTryFrom</a>&lt;Error = <a class="struct" href="../../pyo3/struct.PyDowncastError.html" title="struct pyo3::PyDowncastError">PyDowncastError</a>&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a <a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>Self&gt;</span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.extract' class='fnname'>extract</a>&lt;'a, D&gt;(&amp;'a self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;D&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D: <a class="trait" href="../../pyo3/prelude/trait.FromPyObject.html" title="trait pyo3::prelude::FromPyObject">FromPyObject</a>&lt;'a&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a <a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>Self&gt;</span>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_refcnt' class='fnname'>get_refcnt</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.None' class='fnname'>None</a>(&amp;self) -&gt; <a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a>;
+}</pre><div class='docblock'><p>Python object model helper methods</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.hasattr' class='method'><span id='hasattr.v' class='invisible'><code>fn <a href='#tymethod.hasattr' class='fnname'>hasattr</a>&lt;N&gt;(&amp;self, attr_name: N) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Determines whether this object has the given attribute.
+This is equivalent to the Python expression 'hasattr(self, attr_name)'.</p>
+</div><h3 id='tymethod.getattr' class='method'><span id='getattr.v' class='invisible'><code>fn <a href='#tymethod.getattr' class='fnname'>getattr</a>&lt;N&gt;(&amp;self, attr_name: N) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Retrieves an attribute value.
+This is equivalent to the Python expression 'self.attr_name'.</p>
+</div><h3 id='tymethod.setattr' class='method'><span id='setattr.v' class='invisible'><code>fn <a href='#tymethod.setattr' class='fnname'>setattr</a>&lt;N, V&gt;(&amp;self, attr_name: N, value: V) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Sets an attribute value.
+This is equivalent to the Python expression 'self.attr_name = value'.</p>
+</div><h3 id='tymethod.delattr' class='method'><span id='delattr.v' class='invisible'><code>fn <a href='#tymethod.delattr' class='fnname'>delattr</a>&lt;N&gt;(&amp;self, attr_name: N) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;N: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Deletes an attribute.
+This is equivalent to the Python expression 'del self.attr_name'.</p>
+</div><h3 id='tymethod.compare' class='method'><span id='compare.v' class='invisible'><code>fn <a href='#tymethod.compare' class='fnname'>compare</a>&lt;O&gt;(&amp;self, other: O) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html" title="enum core::cmp::Ordering">Ordering</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;O: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Compares two Python objects.</p>
+<p>On Python 2, this is equivalent to the Python expression 'cmp(self, other)'.</p>
+<p>On Python 3, this is equivalent to:</p>
+<pre><code class="language-python,ignore">if self == other:
+    return Equal
+elif a &lt; b:
+    return Less
+elif a &gt; b:
+    return Greater
+else:
+    raise TypeError(&quot;ObjectProtocol::compare(): All comparisons returned false&quot;)
+</code></pre>
+</div><h3 id='tymethod.rich_compare' class='method'><span id='rich_compare.v' class='invisible'><code>fn <a href='#tymethod.rich_compare' class='fnname'>rich_compare</a>&lt;O&gt;(&amp;self, other: O, compare_op: <a class="enum" href="../../pyo3/class/enum.CompareOp.html" title="enum pyo3::class::CompareOp">CompareOp</a>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;O: <a class="trait" href="../../pyo3/prelude/trait.ToPyObject.html" title="trait pyo3::prelude::ToPyObject">ToPyObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Compares two Python objects.</p>
+<p>Depending on the value of <code>compare_op</code>, equivalent to one of the following Python expressions:</p>
+<ul>
+<li>CompareOp::Eq: <code>self == other</code></li>
+<li>CompareOp::Ne: <code>self != other</code></li>
+<li>CompareOp::Lt: <code>self &lt; other</code></li>
+<li>CompareOp::Le: <code>self &lt;= other</code></li>
+<li>CompareOp::Gt: <code>self &gt; other</code></li>
+<li>CompareOp::Ge: <code>self &gt;= other</code></li>
+</ul>
+</div><h3 id='tymethod.repr' class='method'><span id='repr.v' class='invisible'><code>fn <a href='#tymethod.repr' class='fnname'>repr</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyString.html" title="struct pyo3::PyString">PyString</a>&gt;</code></span></h3><div class='docblock'><p>Compute the string representation of self.
+This is equivalent to the Python expression 'repr(self)'.</p>
+</div><h3 id='tymethod.str' class='method'><span id='str.v' class='invisible'><code>fn <a href='#tymethod.str' class='fnname'>str</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyString.html" title="struct pyo3::PyString">PyString</a>&gt;</code></span></h3><div class='docblock'><p>Compute the string representation of self.
+This is equivalent to the Python expression 'str(self)'.</p>
+</div><h3 id='tymethod.is_callable' class='method'><span id='is_callable.v' class='invisible'><code>fn <a href='#tymethod.is_callable' class='fnname'>is_callable</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Determines whether this object is callable.</p>
+</div><h3 id='tymethod.call' class='method'><span id='call.v' class='invisible'><code>fn <a href='#tymethod.call' class='fnname'>call</a>&lt;A, K&gt;(&amp;self, args: A, kwargs: K) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/trait.IntoPyDictPointer.html" title="trait pyo3::IntoPyDictPointer">IntoPyDictPointer</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Calls the object.
+This is equivalent to the Python expression: 'self(*args, **kwargs)'</p>
+</div><h3 id='tymethod.call0' class='method'><span id='call0.v' class='invisible'><code>fn <a href='#tymethod.call0' class='fnname'>call0</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;</code></span></h3><div class='docblock'><p>Calls the object.
+This is equivalent to the Python expression: 'self()'</p>
+</div><h3 id='tymethod.call1' class='method'><span id='call1.v' class='invisible'><code>fn <a href='#tymethod.call1' class='fnname'>call1</a>&lt;A&gt;(&amp;self, args: A) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Calls the object.
+This is equivalent to the Python expression: 'self(*args)'</p>
+</div><h3 id='tymethod.call_method' class='method'><span id='call_method.v' class='invisible'><code>fn <a href='#tymethod.call_method' class='fnname'>call_method</a>&lt;A, K&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;args: A, <br>&nbsp;&nbsp;&nbsp;&nbsp;kwargs: K<br>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;A: <a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/trait.IntoPyDictPointer.html" title="trait pyo3::IntoPyDictPointer">IntoPyDictPointer</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Calls a method on the object.
+This is equivalent to the Python expression: 'self.name(*args, **kwargs)'</p>
+<h1 id="example" class="section-header"><a href="#example">Example</a></h1>
+<div class='information'><div class='tooltip ignore'>ⓘ<span class='tooltiptext'>This example is not tested</span></div></div><pre class="rust rust-example-rendered ignore">
+<span class="kw">let</span> <span class="ident">obj</span> <span class="op">=</span> <span class="ident">SomePyObject</span>::<span class="ident">new</span>();
+<span class="kw">let</span> <span class="ident">args</span> <span class="op">=</span> (<span class="ident">arg1</span>, <span class="ident">arg2</span>, <span class="ident">arg3</span>);
+<span class="kw">let</span> <span class="ident">kwargs</span> <span class="op">=</span> ((<span class="ident">key1</span>, <span class="ident">value1</span>), (<span class="ident">key2</span>, <span class="ident">value2</span>));
+<span class="kw">let</span> <span class="ident">pid</span> <span class="op">=</span> <span class="ident">obj</span>.<span class="ident">call_method</span>(<span class="string">&quot;do_something&quot;</span>, <span class="ident">args</span>, <span class="ident">kwargs</span>);</pre>
+</div><h3 id='tymethod.call_method0' class='method'><span id='call_method0.v' class='invisible'><code>fn <a href='#tymethod.call_method0' class='fnname'>call_method0</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;</code></span></h3><div class='docblock'><p>Calls a method on the object.
+This is equivalent to the Python expression: 'self.name()'</p>
+</div><h3 id='tymethod.call_method1' class='method'><span id='call_method1.v' class='invisible'><code>fn <a href='#tymethod.call_method1' class='fnname'>call_method1</a>&lt;A:&nbsp;<a class="trait" href="../../pyo3/prelude/trait.IntoPyTuple.html" title="trait pyo3::prelude::IntoPyTuple">IntoPyTuple</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;args: A<br>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;</code></span></h3><div class='docblock'><p>Calls a method on the object with positional arguments only .
+This is equivalent to the Python expression: 'self.name(*args)'</p>
+</div><h3 id='tymethod.hash' class='method'><span id='hash.v' class='invisible'><code>fn <a href='#tymethod.hash' class='fnname'>hash</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a>&gt;</code></span></h3><div class='docblock'><p>Retrieves the hash code of the object.
+This is equivalent to the Python expression: 'hash(self)'</p>
+</div><h3 id='tymethod.is_true' class='method'><span id='is_true.v' class='invisible'><code>fn <a href='#tymethod.is_true' class='fnname'>is_true</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code></span></h3><div class='docblock'><p>Returns whether the object is considered to be true.
+This is equivalent to the Python expression: 'not not self'</p>
+</div><h3 id='tymethod.is_none' class='method'><span id='is_none.v' class='invisible'><code>fn <a href='#tymethod.is_none' class='fnname'>is_none</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Returns whether the object is considered to be None.
+This is equivalent to the Python expression: 'is None'</p>
+</div><h3 id='tymethod.len' class='method'><span id='len.v' class='invisible'><code>fn <a href='#tymethod.len' class='fnname'>len</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>&gt;</code></span></h3><div class='docblock'><p>Returns the length of the sequence or mapping.
+This is equivalent to the Python expression: 'len(self)'</p>
+</div><h3 id='tymethod.get_item' class='method'><span id='get_item.v' class='invisible'><code>fn <a href='#tymethod.get_item' class='fnname'>get_item</a>&lt;K&gt;(&amp;self, key: K) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>This is equivalent to the Python expression: 'self[key]'</p>
+</div><h3 id='tymethod.set_item' class='method'><span id='set_item.v' class='invisible'><code>fn <a href='#tymethod.set_item' class='fnname'>set_item</a>&lt;K, V&gt;(&amp;self, key: K, value: V) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Sets an item value.
+This is equivalent to the Python expression 'self[key] = value'.</p>
+</div><h3 id='tymethod.del_item' class='method'><span id='del_item.v' class='invisible'><code>fn <a href='#tymethod.del_item' class='fnname'>del_item</a>&lt;K&gt;(&amp;self, key: K) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;K: <a class="trait" href="../../pyo3/prelude/trait.ToBorrowedObject.html" title="trait pyo3::prelude::ToBorrowedObject">ToBorrowedObject</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Deletes an item.
+This is equivalent to the Python expression 'del self[key]'.</p>
+</div><h3 id='tymethod.iter' class='method'><span id='iter.v' class='invisible'><code>fn <a href='#tymethod.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="struct" href="../../pyo3/struct.PyIterator.html" title="struct pyo3::PyIterator">PyIterator</a>&gt;</code></span></h3><div class='docblock'><p>Takes an object and returns an iterator for it.
+This is typically a new iterator but if the argument
+is an iterator, this returns itself.</p>
+</div><h3 id='tymethod.get_type' class='method'><span id='get_type.v' class='invisible'><code>fn <a href='#tymethod.get_type' class='fnname'>get_type</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../pyo3/struct.PyType.html" title="struct pyo3::PyType">PyType</a></code></span></h3><div class='docblock'><p>Gets the Python type object for this object's type.</p>
+</div><h3 id='tymethod.get_base' class='method'><span id='get_base.v' class='invisible'><code>fn <a href='#tymethod.get_base' class='fnname'>get_base</a>(&amp;self) -&gt; &amp;Self::<a class="type" href="../../pyo3/typeob/trait.PyTypeInfo.html#associatedtype.BaseType" title="type pyo3::typeob::PyTypeInfo::BaseType">BaseType</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Gets the Python base object for this object.</p>
+</div><h3 id='tymethod.get_mut_base' class='method'><span id='get_mut_base.v' class='invisible'><code>fn <a href='#tymethod.get_mut_base' class='fnname'>get_mut_base</a>(&amp;self) -&gt; &amp;mut Self::<a class="type" href="../../pyo3/typeob/trait.PyTypeInfo.html#associatedtype.BaseType" title="type pyo3::typeob::PyTypeInfo::BaseType">BaseType</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Gets the Python base object for this object.</p>
+</div><h3 id='tymethod.cast_as' class='method'><span id='cast_as.v' class='invisible'><code>fn <a href='#tymethod.cast_as' class='fnname'>cast_as</a>&lt;'a, D&gt;(&amp;'a self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>D, &lt;D as <a class="trait" href="../../pyo3/prelude/trait.PyTryFrom.html" title="trait pyo3::prelude::PyTryFrom">PyTryFrom</a>&gt;::<a class="type" href="../../pyo3/prelude/trait.PyTryFrom.html#associatedtype.Error" title="type pyo3::prelude::PyTryFrom::Error">Error</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;D: <a class="trait" href="../../pyo3/prelude/trait.PyTryFrom.html" title="trait pyo3::prelude::PyTryFrom">PyTryFrom</a>&lt;Error = <a class="struct" href="../../pyo3/struct.PyDowncastError.html" title="struct pyo3::PyDowncastError">PyDowncastError</a>&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a <a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>Self&gt;,&nbsp;</span></code></span></h3><div class='docblock'><p>Casts the PyObject to a concrete Python object type.</p>
+</div><h3 id='tymethod.extract' class='method'><span id='extract.v' class='invisible'><code>fn <a href='#tymethod.extract' class='fnname'>extract</a>&lt;'a, D&gt;(&amp;'a self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;D&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;D: <a class="trait" href="../../pyo3/prelude/trait.FromPyObject.html" title="trait pyo3::prelude::FromPyObject">FromPyObject</a>&lt;'a&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a <a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>Self&gt;,&nbsp;</span></code></span></h3><div class='docblock'><p>Extracts some type from the Python object.
+This is a wrapper function around <code>FromPyObject::extract()</code>.</p>
+</div><h3 id='tymethod.get_refcnt' class='method'><span id='get_refcnt.v' class='invisible'><code>fn <a href='#tymethod.get_refcnt' class='fnname'>get_refcnt</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a></code></span></h3><div class='docblock'><p>Returns reference count for python object.</p>
+</div><h3 id='tymethod.None' class='method'><span id='None.v' class='invisible'><code>fn <a href='#tymethod.None' class='fnname'>None</a>(&amp;self) -&gt; <a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a></code></span></h3><div class='docblock'><p>Gets the Python builtin value <code>None</code>.</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objectprotocol.rs.html#179-462' title='goto source code'>[src]</a></div><code>impl&lt;T&gt; ObjectProtocol for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/prelude/trait.PyObjectWithToken.html" title="trait pyo3::prelude::PyObjectWithToken">PyObjectWithToken</a> + <a class="trait" href="../../pyo3/prelude/trait.ToPyPointer.html" title="trait pyo3::prelude::ToPyPointer">ToPyPointer</a>,&nbsp;</span></code></li>
+</ul><script type="text/javascript">window.inlined_types=new Set([]);</script><script type="text/javascript" async
+                         src="../../implementors/pyo3/prelude/trait.ObjectProtocol.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "pyo3";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

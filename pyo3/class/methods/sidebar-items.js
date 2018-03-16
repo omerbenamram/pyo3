@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["PyMethodDefType","`PyMethodDefType` represents different types of python callable objects. It is used by `#[py::methods]` and `#[py::proto]` annotations."],["PyMethodType",""]],"struct":[["PyGetterDef",""],["PyMethodDef",""],["PySetterDef",""]]});

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `number` mod in crate `pyo3`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, number">
+
+    <title>pyo3::class::number - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css"
+          id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <script src="../../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Module number</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../../index.html'>pyo3</a>::<wbr><a href='../index.html'>class</a></p><script>window.sidebarCurrent = {name: 'number', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>pyo3</a>::<wbr><a href='../index.html'>class</a>::<wbr><a class="mod" href=''>number</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/pyo3/class/number.rs.html#3-1128' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Python Number Interface
+Trait and support implementation for implementing number protocol</p>
+</div><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberAbsProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberAbsProtocol'>PyNumberAbsProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberAddProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberAddProtocol'>PyNumberAddProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberAndProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberAndProtocol'>PyNumberAndProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberComplexProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberComplexProtocol'>PyNumberComplexProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberDivmodProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberDivmodProtocol'>PyNumberDivmodProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberFloatProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberFloatProtocol'>PyNumberFloatProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberFloordivProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberFloordivProtocol'>PyNumberFloordivProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIAddProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIAddProtocol'>PyNumberIAddProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIAndProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIAndProtocol'>PyNumberIAndProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIDivmodProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIDivmodProtocol'>PyNumberIDivmodProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIFloordivProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIFloordivProtocol'>PyNumberIFloordivProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberILShiftProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberILShiftProtocol'>PyNumberILShiftProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIMatmulProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIMatmulProtocol'>PyNumberIMatmulProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIModProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIModProtocol'>PyNumberIModProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIMulProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIMulProtocol'>PyNumberIMulProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIOrProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIOrProtocol'>PyNumberIOrProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIPowProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIPowProtocol'>PyNumberIPowProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIRShiftProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIRShiftProtocol'>PyNumberIRShiftProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberISubProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberISubProtocol'>PyNumberISubProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberITruedivProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberITruedivProtocol'>PyNumberITruedivProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIXorProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIXorProtocol'>PyNumberIXorProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIndexProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIndexProtocol'>PyNumberIndexProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberIntProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberIntProtocol'>PyNumberIntProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberInvertProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberInvertProtocol'>PyNumberInvertProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberLShiftProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberLShiftProtocol'>PyNumberLShiftProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberMatmulProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberMatmulProtocol'>PyNumberMatmulProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberModProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberModProtocol'>PyNumberModProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberMulProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberMulProtocol'>PyNumberMulProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberNegProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberNegProtocol'>PyNumberNegProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberOrProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberOrProtocol'>PyNumberOrProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberPosProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberPosProtocol'>PyNumberPosProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberPowProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberPowProtocol'>PyNumberPowProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberProtocol'>PyNumberProtocol</a></td>
+                           <td class='docblock-short'>
+                                <p>Number interface</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRAddProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRAddProtocol'>PyNumberRAddProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRAndProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRAndProtocol'>PyNumberRAndProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRDivmodProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRDivmodProtocol'>PyNumberRDivmodProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRFloordivProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRFloordivProtocol'>PyNumberRFloordivProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRLShiftProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRLShiftProtocol'>PyNumberRLShiftProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRMatmulProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRMatmulProtocol'>PyNumberRMatmulProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRModProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRModProtocol'>PyNumberRModProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRMulProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRMulProtocol'>PyNumberRMulProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberROrProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberROrProtocol'>PyNumberROrProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRPowProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRPowProtocol'>PyNumberRPowProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRRShiftProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRRShiftProtocol'>PyNumberRRShiftProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRShiftProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRShiftProtocol'>PyNumberRShiftProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRSubProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRSubProtocol'>PyNumberRSubProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRTruedivProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRTruedivProtocol'>PyNumberRTruedivProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRXorProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRXorProtocol'>PyNumberRXorProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberRoundProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberRoundProtocol'>PyNumberRoundProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberSubProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberSubProtocol'>PyNumberSubProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberTruedivProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberTruedivProtocol'>PyNumberTruedivProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PyNumberXorProtocol.html"
+                                  title='trait pyo3::class::number::PyNumberXorProtocol'>PyNumberXorProtocol</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "pyo3";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

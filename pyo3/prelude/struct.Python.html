@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Python` struct in crate `pyo3`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Python">
+
+    <title>pyo3::prelude::Python - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
+          id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct Python</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.assume_gil_acquired">assume_gil_acquired</a><a href="#method.acquire_gil">acquire_gil</a><a href="#method.allow_threads">allow_threads</a><a href="#method.eval">eval</a><a href="#method.run">run</a><a href="#method.get_type">get_type</a><a href="#method.import">import</a><a href="#method.is_instance">is_instance</a><a href="#method.is_subclass">is_subclass</a><a href="#method.None">None</a><a href="#method.NotImplemented">NotImplemented</a><a href="#method.init">init</a><a href="#method.init_ref">init_ref</a><a href="#method.init_mut">init_mut</a><a href="#method.checked_cast_as">checked_cast_as</a><a href="#method.cast_as">cast_as</a><a href="#method.from_borrowed_ptr_to_obj">from_borrowed_ptr_to_obj</a><a href="#method.from_owned_ptr">from_owned_ptr</a><a href="#method.mut_from_owned_ptr">mut_from_owned_ptr</a><a href="#method.from_owned_ptr_or_err">from_owned_ptr_or_err</a><a href="#method.from_owned_ptr_or_opt">from_owned_ptr_or_opt</a><a href="#method.from_borrowed_ptr">from_borrowed_ptr</a><a href="#method.mut_from_borrowed_ptr">mut_from_borrowed_ptr</a><a href="#method.from_borrowed_ptr_or_err">from_borrowed_ptr_or_err</a><a href="#method.from_borrowed_ptr_or_opt">from_borrowed_ptr_or_opt</a><a href="#method.release">release</a><a href="#method.xdecref">xdecref</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a></div><a class="sidebar-title" href="#synthetic-implementations">Auto Trait Implementations</a><div class="sidebar-links"><a href="#impl-Send">!Send</a><a href="#impl-Sync">!Sync</a></div></div><p class='location'><a href='../index.html'>pyo3</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'Python', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>pyo3</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="struct" href=''>Python</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/pyo3/python.rs.html#31' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Python&lt;'p&gt;(_);</pre><div class='docblock'><p>Marker type that indicates that the GIL is currently held.</p>
+<p>The 'Python' struct is a zero-size marker struct that is required for most Python operations.
+This is used to indicate that the operation accesses/modifies the Python interpreter state,
+and thus can only be called if the Python interpreter is initialized and the
+Python global interpreter lock (GIL) is acquired.
+The lifetime <code>'p</code> represents the lifetime of the Python interpreter.</p>
+<p>You can imagine the GIL to be a giant <code>Mutex&lt;PythonInterpreterState&gt;</code>.
+The type <code>Python&lt;'p&gt;</code> then acts like a reference <code>&amp;'p PythonInterpreterState</code>.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'p&gt; <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#88-203' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.assume_gil_acquired' class="method"><span id='assume_gil_acquired.v' class='invisible'><code>pub unsafe fn <a href='#method.assume_gil_acquired' class='fnname'>assume_gil_acquired</a>() -&gt; <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#96-98' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Retrieve Python instance under the assumption that the GIL is already acquired at this point,
+and stays acquired for the lifetime <code>'p</code>.</p>
+<p>Because the output lifetime <code>'p</code> is not connected to any input parameter,
+care must be taken that the compiler infers an appropriate lifetime for <code>'p</code>
+when calling this function.</p>
+</div><h4 id='method.acquire_gil' class="method"><span id='acquire_gil.v' class='invisible'><code>pub fn <a href='#method.acquire_gil' class='fnname'>acquire_gil</a>() -&gt; <a class="struct" href="../../pyo3/struct.GILGuard.html" title="struct pyo3::GILGuard">GILGuard</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#105-107' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Acquires the global interpreter lock, which allows access to the Python runtime.</p>
+<p>If the Python runtime is not already initialized, this function will initialize it.
+See <a href="fn.prepare_freethreaded_python.html">prepare_freethreaded_python()</a> for details.</p>
+</div><h4 id='method.allow_threads' class="method"><span id='allow_threads.v' class='invisible'><code>pub fn <a href='#method.allow_threads' class='fnname'>allow_threads</a>&lt;T, F&gt;(self, f: F) -&gt; T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>() -&gt; T,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#110-119' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Temporarily releases the <code>GIL</code>, thus allowing other Python threads to run.</p>
+</div><h4 id='method.eval' class="method"><span id='eval.v' class='invisible'><code>pub fn <a href='#method.eval' class='fnname'>eval</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;code: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;globals: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyDict.html" title="struct pyo3::PyDict">PyDict</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;locals: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyDict.html" title="struct pyo3::PyDict">PyDict</a>&gt;<br>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;'p <a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#125-128' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Evaluates a Python expression in the given context and returns the result.</p>
+<p>If <code>globals</code> is <code>None</code>, it defaults to Python module <code>__main__</code>.
+If <code>locals</code> is <code>None</code>, it defaults to the value of <code>globals</code>.</p>
+</div><h4 id='method.run' class="method"><span id='run.v' class='invisible'><code>pub fn <a href='#method.run' class='fnname'>run</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;code: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;globals: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyDict.html" title="struct pyo3::PyDict">PyDict</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;locals: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../pyo3/struct.PyDict.html" title="struct pyo3::PyDict">PyDict</a>&gt;<br>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#134-138' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes one or more Python statements in the given context.</p>
+<p>If <code>globals</code> is <code>None</code>, it defaults to Python module <code>__main__</code>.
+If <code>locals</code> is <code>None</code>, it defaults to the value of <code>globals</code>.</p>
+</div><h4 id='method.get_type' class="method"><span id='get_type.v' class='invisible'><code>pub fn <a href='#method.get_type' class='fnname'>get_type</a>&lt;T&gt;(self) -&gt; &amp;'p <a class="struct" href="../../pyo3/struct.PyType.html" title="struct pyo3::PyType">PyType</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeObject.html" title="trait pyo3::typeob::PyTypeObject">PyTypeObject</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#168-170' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the Python type object for type <code>T</code>.</p>
+</div><h4 id='method.import' class="method"><span id='import.v' class='invisible'><code>pub fn <a href='#method.import' class='fnname'>import</a>(self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;&amp;'p <a class="struct" href="../../pyo3/struct.PyModule.html" title="struct pyo3::PyModule">PyModule</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#173-175' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Import the Python module with the specified name.</p>
+</div><h4 id='method.is_instance' class="method"><span id='is_instance.v' class='invisible'><code>pub fn <a href='#method.is_instance' class='fnname'>is_instance</a>&lt;T:&nbsp;<a class="trait" href="../../pyo3/typeob/trait.PyTypeObject.html" title="trait pyo3::typeob::PyTypeObject">PyTypeObject</a>, V:&nbsp;<a class="trait" href="../../pyo3/prelude/trait.ToPyPointer.html" title="trait pyo3::prelude::ToPyPointer">ToPyPointer</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;obj: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>V<br>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#178-180' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether <code>obj</code> is an instance of type <code>T</code> like Python <code>isinstance</code> function</p>
+</div><h4 id='method.is_subclass' class="method"><span id='is_subclass.v' class='invisible'><code>pub fn <a href='#method.is_subclass' class='fnname'>is_subclass</a>&lt;T, U&gt;(self) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeObject.html" title="trait pyo3::typeob::PyTypeObject">PyTypeObject</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;U: <a class="trait" href="../../pyo3/typeob/trait.PyTypeObject.html" title="trait pyo3::typeob::PyTypeObject">PyTypeObject</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#183-188' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Check whether type <code>T</code> is subclass of type <code>U</code> like Python <code>issubclass</code> function</p>
+</div><h4 id='method.None' class="method"><span id='None.v' class='invisible'><code>pub fn <a href='#method.None' class='fnname'>None</a>(self) -&gt; <a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#193-195' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the Python builtin value <code>None</code>.</p>
+</div><h4 id='method.NotImplemented' class="method"><span id='NotImplemented.v' class='invisible'><code>pub fn <a href='#method.NotImplemented' class='fnname'>NotImplemented</a>(self) -&gt; <a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#200-202' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the Python builtin value <code>NotImplemented</code>.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl&lt;'p&gt; <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#205-236' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.init' class="method"><span id='init.v' class='invisible'><code>pub fn <a href='#method.init' class='fnname'>init</a>&lt;T, F&gt;(self, f: F) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="struct" href="../../pyo3/struct.Py.html" title="struct pyo3::Py">Py</a>&lt;T&gt;&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(<a class="struct" href="../../pyo3/struct.PyToken.html" title="struct pyo3::PyToken">PyToken</a>) -&gt; T,<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a> + <a class="trait" href="../../pyo3/typeob/trait.PyObjectAlloc.html" title="trait pyo3::typeob::PyObjectAlloc">PyObjectAlloc</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#210-215' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create new instance of <code>T</code> and move it under python management.
+Returns <code>Py&lt;T&gt;</code>.</p>
+</div><h4 id='method.init_ref' class="method"><span id='init_ref.v' class='invisible'><code>pub fn <a href='#method.init_ref' class='fnname'>init_ref</a>&lt;T, F&gt;(self, f: F) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(<a class="struct" href="../../pyo3/struct.PyToken.html" title="struct pyo3::PyToken">PyToken</a>) -&gt; T,<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a> + <a class="trait" href="../../pyo3/typeob/trait.PyObjectAlloc.html" title="trait pyo3::typeob::PyObjectAlloc">PyObjectAlloc</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#220-225' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create new instance of <code>T</code> and move it under python management.
+Created object get registered in release pool. Returns references to <code>T</code></p>
+</div><h4 id='method.init_mut' class="method"><span id='init_mut.v' class='invisible'><code>pub fn <a href='#method.init_mut' class='fnname'>init_mut</a>&lt;T, F&gt;(self, f: F) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p mut </a>T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(<a class="struct" href="../../pyo3/struct.PyToken.html" title="struct pyo3::PyToken">PyToken</a>) -&gt; T,<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a> + <a class="trait" href="../../pyo3/typeob/trait.PyObjectAlloc.html" title="trait pyo3::typeob::PyObjectAlloc">PyObjectAlloc</a>&lt;T&gt;,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#230-235' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create new instance of <code>T</code> and move it under python management.
+Created object get registered in release pool. Returns mutable references to <code>T</code></p>
+</div></div><h3 id='impl-2' class='impl'><span class='in-band'><code>impl&lt;'p&gt; <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code><a href='#impl-2' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#238-428' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.checked_cast_as' class="method"><span id='checked_cast_as.v' class='invisible'><code>pub fn <a href='#method.checked_cast_as' class='fnname'>checked_cast_as</a>&lt;T&gt;(self, obj: <a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T, <a class="struct" href="../../pyo3/struct.PyDowncastError.html" title="struct pyo3::PyDowncastError">PyDowncastError</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#261-268' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register object in release pool, and try to downcast to specific type.</p>
+</div><h4 id='method.cast_as' class="method"><span id='cast_as.v' class='invisible'><code>pub unsafe fn <a href='#method.cast_as' class='fnname'>cast_as</a>&lt;T&gt;(self, obj: <a class="struct" href="../../pyo3/struct.PyObject.html" title="struct pyo3::PyObject">PyObject</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#271-276' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register object in release pool, and do unchecked downcast to specific type.</p>
+</div><h4 id='method.from_borrowed_ptr_to_obj' class="method"><span id='from_borrowed_ptr_to_obj.v' class='invisible'><code>pub unsafe fn <a href='#method.from_borrowed_ptr_to_obj' class='fnname'>from_borrowed_ptr_to_obj</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a><br>) -&gt; &amp;'p <a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#280-287' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register <code>ffi::PyObject</code> pointer in release pool</p>
+</div><h4 id='method.from_owned_ptr' class="method"><span id='from_owned_ptr.v' class='invisible'><code>pub unsafe fn <a href='#method.from_owned_ptr' class='fnname'>from_owned_ptr</a>&lt;T&gt;(self, ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#292-301' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register <code>ffi::PyObject</code> pointer in release pool,
+and do unchecked downcast to specific type.</p>
+</div><h4 id='method.mut_from_owned_ptr' class="method"><span id='mut_from_owned_ptr.v' class='invisible'><code>pub unsafe fn <a href='#method.mut_from_owned_ptr' class='fnname'>mut_from_owned_ptr</a>&lt;T&gt;(self, ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p mut </a>T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#305-314' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register <code>ffi::PyObject</code> pointer in release pool,
+Do unchecked downcast to specific type. Returns mutable reference.</p>
+</div><h4 id='method.from_owned_ptr_or_err' class="method"><span id='from_owned_ptr_or_err.v' class='invisible'><code>pub unsafe fn <a href='#method.from_owned_ptr_or_err' class='fnname'>from_owned_ptr_or_err</a>&lt;T&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a><br>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#320-329' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register owned <code>ffi::PyObject</code> pointer in release pool.
+Returns <code>Err(PyErr)</code> if the pointer is <code>null</code>.
+do unchecked downcast to specific type.</p>
+</div><h4 id='method.from_owned_ptr_or_opt' class="method"><span id='from_owned_ptr_or_opt.v' class='invisible'><code>pub unsafe fn <a href='#method.from_owned_ptr_or_opt' class='fnname'>from_owned_ptr_or_opt</a>&lt;T&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#335-344' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register owned <code>ffi::PyObject</code> pointer in release pool.
+Returns <code>None</code> if the pointer is <code>null</code>.
+do unchecked downcast to specific type.</p>
+</div><h4 id='method.from_borrowed_ptr' class="method"><span id='from_borrowed_ptr.v' class='invisible'><code>pub unsafe fn <a href='#method.from_borrowed_ptr' class='fnname'>from_borrowed_ptr</a>&lt;T&gt;(self, ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#350-355' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register borrowed <code>ffi::PyObject</code> pointer in release pool.
+Panics if the pointer is <code>null</code>.
+do unchecked downcast to specific type.</p>
+</div><h4 id='method.mut_from_borrowed_ptr' class="method"><span id='mut_from_borrowed_ptr.v' class='invisible'><code>pub unsafe fn <a href='#method.mut_from_borrowed_ptr' class='fnname'>mut_from_borrowed_ptr</a>&lt;T&gt;(self, ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p mut </a>T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#360-369' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register borrowed <code>ffi::PyObject</code> pointer in release pool.
+Panics if the pointer is <code>null</code>.
+do unchecked downcast to specific type.</p>
+</div><h4 id='method.from_borrowed_ptr_or_err' class="method"><span id='from_borrowed_ptr_or_err.v' class='invisible'><code>pub unsafe fn <a href='#method.from_borrowed_ptr_or_err' class='fnname'>from_borrowed_ptr_or_err</a>&lt;T&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a><br>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#375-384' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register borrowed <code>ffi::PyObject</code> pointer in release pool.
+Returns <code>Err(PyErr)</code> if the pointer is <code>null</code>.
+do unchecked downcast to specific type.</p>
+</div><h4 id='method.from_borrowed_ptr_or_opt' class="method"><span id='from_borrowed_ptr_or_opt.v' class='invisible'><code>pub unsafe fn <a href='#method.from_borrowed_ptr_or_opt' class='fnname'>from_borrowed_ptr_or_opt</a>&lt;T&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'p </a>T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#390-399' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Register borrowed <code>ffi::PyObject</code> pointer in release pool.
+Returns <code>None</code> if the pointer is <code>null</code>.
+do unchecked downcast to specific <code>T</code>.</p>
+</div><h4 id='method.release' class="method"><span id='release.v' class='invisible'><code>pub fn <a href='#method.release' class='fnname'>release</a>&lt;T&gt;(self, ob: T) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/prelude/trait.IntoPyPointer.html" title="trait pyo3::prelude::IntoPyPointer">IntoPyPointer</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#410-417' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Release PyObject reference.</p>
+</div><h4 id='method.xdecref' class="method"><span id='xdecref.v' class='invisible'><code>pub fn <a href='#method.xdecref' class='fnname'>xdecref</a>(self, ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../pyo3/ffi/struct.PyObject.html" title="struct pyo3::ffi::PyObject">PyObject</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#423-427' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Release <code>ffi::PyObject</code> pointer.
+Undefined behavior if the pointer is invalid.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+            <div id='implementations-list'>
+        <h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl&lt;'p&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#30' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;'p&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#30' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/pyo3/python.rs.html#30' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></div>
+                <h2 id='synthetic-implementations' class='small-section-header'>
+                  Auto Trait Implementations<a href='#synthetic-implementations' class='anchor'></a>
+                </h2>
+                <div id='synthetic-implementations-list'>
+            <h3 id='impl-Send' class='impl'><span class='in-band'><code>impl&lt;'p&gt; !<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code><a href='#impl-Send' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 id='impl-Sync' class='impl'><span class='in-band'><code>impl&lt;'p&gt; !<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>&lt;'p&gt;</code><a href='#impl-Sync' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "pyo3";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PyTypeObject` trait in crate `pyo3`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PyTypeObject">
+
+    <title>pyo3::typeob::PyTypeObject - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
+          id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Trait PyTypeObject</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.init_type">init_type</a><a href="#tymethod.type_object">type_object</a></div><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.create">create</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>pyo3</a>::<wbr><a href='index.html'>typeob</a></p><script>window.sidebarCurrent = {name: 'PyTypeObject', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>pyo3</a>::<wbr><a href='index.html'>typeob</a>::<wbr><a class="trait" href=''>PyTypeObject</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/pyo3/typeob.rs.html#303-326' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait PyTypeObject {
+    fn <a href='#tymethod.init_type' class='fnname'>init_type</a>();
+<div class='item-spacer'></div>    fn <a href='#tymethod.type_object' class='fnname'>type_object</a>() -&gt; <a class="struct" href="../../pyo3/struct.Py.html" title="struct pyo3::Py">Py</a>&lt;<a class="struct" href="../../pyo3/struct.PyType.html" title="struct pyo3::PyType">PyType</a>&gt;;
+
+    fn <a href='#method.create' class='fnname'>create</a>(py: <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="struct" href="../../pyo3/typeob/struct.PyRawObject.html" title="struct pyo3::typeob::PyRawObject">PyRawObject</a>&gt;<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> + <a class="trait" href="../../pyo3/typeob/trait.PyObjectAlloc.html" title="trait pyo3::typeob::PyObjectAlloc">PyObjectAlloc</a>&lt;Self&gt; + <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a></span>,
+    { ... }
+}</pre><div class='docblock'><p>Trait implemented by Python object types that have a corresponding type object.</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.init_type' class='method'><span id='init_type.v' class='invisible'><code>fn <a href='#tymethod.init_type' class='fnname'>init_type</a>()</code></span></h3><div class='docblock'><p>Initialize type object</p>
+</div><h3 id='tymethod.type_object' class='method'><span id='type_object.v' class='invisible'><code>fn <a href='#tymethod.type_object' class='fnname'>type_object</a>() -&gt; <a class="struct" href="../../pyo3/struct.Py.html" title="struct pyo3::Py">Py</a>&lt;<a class="struct" href="../../pyo3/struct.PyType.html" title="struct pyo3::PyType">PyType</a>&gt;</code></span></h3><div class='docblock'><p>Retrieves the type object for this Python object type.</p>
+</div></div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.create' class='method'><span id='create.v' class='invisible'><code>fn <a href='#method.create' class='fnname'>create</a>(py: <a class="struct" href="../../pyo3/struct.Python.html" title="struct pyo3::Python">Python</a>) -&gt; <a class="type" href="../../pyo3/prelude/type.PyResult.html" title="type pyo3::prelude::PyResult">PyResult</a>&lt;<a class="struct" href="../../pyo3/typeob/struct.PyRawObject.html" title="struct pyo3::typeob::PyRawObject">PyRawObject</a>&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> + <a class="trait" href="../../pyo3/typeob/trait.PyObjectAlloc.html" title="trait pyo3::typeob::PyObjectAlloc">PyObjectAlloc</a>&lt;Self&gt; + <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Create PyRawObject which can be initialized with rust value</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyType.html" title="struct pyo3::PyType">PyType</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyModule.html" title="struct pyo3::PyModule">PyModule</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyDict.html" title="struct pyo3::PyDict">PyDict</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyBool.html" title="struct pyo3::PyBool">PyBool</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyByteArray.html" title="struct pyo3::PyByteArray">PyByteArray</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyTuple.html" title="struct pyo3::PyTuple">PyTuple</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyList.html" title="struct pyo3::PyList">PyList</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyFloat.html" title="struct pyo3::PyFloat">PyFloat</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PySlice.html" title="struct pyo3::PySlice">PySlice</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PySet.html" title="struct pyo3::PySet">PySet</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyFrozenSet.html" title="struct pyo3::PyFrozenSet">PyFrozenSet</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/asyncio/struct.CancelledError.html" title="struct pyo3::exc::asyncio::CancelledError">CancelledError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/asyncio/struct.InvalidStateError.html" title="struct pyo3::exc::asyncio::InvalidStateError">InvalidStateError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for pyo3::exc::asyncio::<a class="struct" href="../../pyo3/exc/asyncio/struct.TimeoutError.html" title="struct pyo3::exc::asyncio::TimeoutError">TimeoutError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/asyncio/struct.IncompleteReadError.html" title="struct pyo3::exc::asyncio::IncompleteReadError">IncompleteReadError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/asyncio/struct.LimitOverrunError.html" title="struct pyo3::exc::asyncio::LimitOverrunError">LimitOverrunError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/asyncio/struct.QueueEmpty.html" title="struct pyo3::exc::asyncio::QueueEmpty">QueueEmpty</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/asyncio/struct.QueueFull.html" title="struct pyo3::exc::asyncio::QueueFull">QueueFull</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/socket/struct.herror.html" title="struct pyo3::exc::socket::herror">herror</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/socket/struct.gaierror.html" title="struct pyo3::exc::socket::gaierror">gaierror</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc_impl.rs.html#73-101' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/socket/struct.timeout.html" title="struct pyo3::exc::socket::timeout">timeout</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.BaseException.html" title="struct pyo3::exc::BaseException">BaseException</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.Exception.html" title="struct pyo3::exc::Exception">Exception</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.StopAsyncIteration.html" title="struct pyo3::exc::StopAsyncIteration">StopAsyncIteration</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.StopIteration.html" title="struct pyo3::exc::StopIteration">StopIteration</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.GeneratorExit.html" title="struct pyo3::exc::GeneratorExit">GeneratorExit</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ArithmeticError.html" title="struct pyo3::exc::ArithmeticError">ArithmeticError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.LookupError.html" title="struct pyo3::exc::LookupError">LookupError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.AssertionError.html" title="struct pyo3::exc::AssertionError">AssertionError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.AttributeError.html" title="struct pyo3::exc::AttributeError">AttributeError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.BufferError.html" title="struct pyo3::exc::BufferError">BufferError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.EOFError.html" title="struct pyo3::exc::EOFError">EOFError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.FloatingPointError.html" title="struct pyo3::exc::FloatingPointError">FloatingPointError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.OSError.html" title="struct pyo3::exc::OSError">OSError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ImportError.html" title="struct pyo3::exc::ImportError">ImportError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ModuleNotFoundError.html" title="struct pyo3::exc::ModuleNotFoundError">ModuleNotFoundError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.IndexError.html" title="struct pyo3::exc::IndexError">IndexError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.KeyError.html" title="struct pyo3::exc::KeyError">KeyError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.KeyboardInterrupt.html" title="struct pyo3::exc::KeyboardInterrupt">KeyboardInterrupt</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.MemoryError.html" title="struct pyo3::exc::MemoryError">MemoryError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.NameError.html" title="struct pyo3::exc::NameError">NameError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.OverflowError.html" title="struct pyo3::exc::OverflowError">OverflowError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.RuntimeError.html" title="struct pyo3::exc::RuntimeError">RuntimeError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.RecursionError.html" title="struct pyo3::exc::RecursionError">RecursionError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.NotImplementedError.html" title="struct pyo3::exc::NotImplementedError">NotImplementedError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.SyntaxError.html" title="struct pyo3::exc::SyntaxError">SyntaxError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ReferenceError.html" title="struct pyo3::exc::ReferenceError">ReferenceError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.SystemError.html" title="struct pyo3::exc::SystemError">SystemError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.SystemExit.html" title="struct pyo3::exc::SystemExit">SystemExit</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.TypeError.html" title="struct pyo3::exc::TypeError">TypeError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.UnboundLocalError.html" title="struct pyo3::exc::UnboundLocalError">UnboundLocalError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.UnicodeError.html" title="struct pyo3::exc::UnicodeError">UnicodeError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.UnicodeDecodeError.html" title="struct pyo3::exc::UnicodeDecodeError">UnicodeDecodeError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.UnicodeEncodeError.html" title="struct pyo3::exc::UnicodeEncodeError">UnicodeEncodeError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.UnicodeTranslateError.html" title="struct pyo3::exc::UnicodeTranslateError">UnicodeTranslateError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ValueError.html" title="struct pyo3::exc::ValueError">ValueError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ZeroDivisionError.html" title="struct pyo3::exc::ZeroDivisionError">ZeroDivisionError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.BlockingIOError.html" title="struct pyo3::exc::BlockingIOError">BlockingIOError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.BrokenPipeError.html" title="struct pyo3::exc::BrokenPipeError">BrokenPipeError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ChildProcessError.html" title="struct pyo3::exc::ChildProcessError">ChildProcessError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ConnectionError.html" title="struct pyo3::exc::ConnectionError">ConnectionError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ConnectionAbortedError.html" title="struct pyo3::exc::ConnectionAbortedError">ConnectionAbortedError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ConnectionRefusedError.html" title="struct pyo3::exc::ConnectionRefusedError">ConnectionRefusedError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ConnectionResetError.html" title="struct pyo3::exc::ConnectionResetError">ConnectionResetError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.FileExistsError.html" title="struct pyo3::exc::FileExistsError">FileExistsError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.FileNotFoundError.html" title="struct pyo3::exc::FileNotFoundError">FileNotFoundError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.InterruptedError.html" title="struct pyo3::exc::InterruptedError">InterruptedError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.IsADirectoryError.html" title="struct pyo3::exc::IsADirectoryError">IsADirectoryError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.NotADirectoryError.html" title="struct pyo3::exc::NotADirectoryError">NotADirectoryError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.PermissionError.html" title="struct pyo3::exc::PermissionError">PermissionError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.ProcessLookupError.html" title="struct pyo3::exc::ProcessLookupError">ProcessLookupError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for pyo3::exc::<a class="struct" href="../../pyo3/exc/struct.TimeoutError.html" title="struct pyo3::exc::TimeoutError">TimeoutError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.EnvironmentError.html" title="struct pyo3::exc::EnvironmentError">EnvironmentError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/exc.rs.html#40-50' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/exc/struct.IOError.html" title="struct pyo3::exc::IOError">IOError</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyLong.html" title="struct pyo3::PyLong">PyLong</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyString.html" title="struct pyo3::PyString">PyString</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyBytes.html" title="struct pyo3::PyBytes">PyBytes</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/objects/mod.rs.html#118-126' title='goto source code'>[src]</a></div><code>impl PyTypeObject for <a class="struct" href="../../pyo3/struct.PyObjectRef.html" title="struct pyo3::PyObjectRef">PyObjectRef</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/pyo3/typeob.rs.html#328-349' title='goto source code'>[src]</a></div><code>impl&lt;T&gt; PyTypeObject for T <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../../pyo3/typeob/trait.PyObjectAlloc.html" title="trait pyo3::typeob::PyObjectAlloc">PyObjectAlloc</a>&lt;T&gt; + <a class="trait" href="../../pyo3/typeob/trait.PyTypeInfo.html" title="trait pyo3::typeob::PyTypeInfo">PyTypeInfo</a>,&nbsp;</span></code></li>
+</ul><script type="text/javascript">window.inlined_types=new Set([]);</script><script type="text/javascript" async
+                         src="../../implementors/pyo3/typeob/trait.PyTypeObject.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "pyo3";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
