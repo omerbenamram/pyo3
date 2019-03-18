@@ -31,6 +31,14 @@ use crate::Python;
 use crate::ToPyObject;
 use std::os::raw::c_int;
 use std::ptr;
+use crate::types::PyFloat;
+use crate::types::PyLong;
+use std::os::raw::c_long;
+use crate::ffi::PyFloat_FromDouble;
+use crate::ffi::Py_BuildValue;
+use std::os::raw::c_double;
+use crate::ffi::datetime::PyDateTime_CAPI;
+use crate::ffi::datetime::PyDate_FromTimestamp;
 
 /// Access traits
 
@@ -83,15 +91,21 @@ impl PyDate {
     ///
     /// This is equivalent to `datetime.date.fromtimestamp`
     pub fn from_timestamp(py: Python, timestamp: i64) -> PyResult<Py<PyDate>> {
-        let args = PyTuple::new(py, &[timestamp]);
-        println!("{:?}", PyDateTimeAPI.Date_FromTimestamp);
-        println!("{:?}", PyDateTimeAPI.DateType);
-        println!("{:?}", args);
-
         unsafe {
-            let ptr = (PyDateTimeAPI.Date_FromTimestamp)(PyDateTimeAPI.DateType, args.as_ptr());
-            println!("resp - {:?}", args);
-            Py::from_owned_ptr_or_err(py, ptr)
+            let floatObj = PyFloat::new(py, timestamp as f64);
+            let timeTuple = PyTuple::new(py,  &[floatObj]);
+
+            let ptr = if cfg!(PyPy) {
+                PyDate_FromTimestamp(timeTuple.as_ptr())
+            } else {
+                (PyDateTimeAPI.Date_FromTimestamp)(PyDateTimeAPI.DateType, timeTuple.as_ptr())
+
+            };
+
+            unsafe {
+                println!("resp - {:?}", timeTuple);
+                Py::from_owned_ptr_or_err(py, ptr)
+            }
         }
     }
 }

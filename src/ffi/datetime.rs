@@ -72,7 +72,6 @@ pub struct PyDateTime_CAPI {
         args: *mut PyObject,
         kwargs: *mut PyObject,
     ) -> *mut PyObject,
-    #[cfg_attr(PyPy, link_name = "PyPyDate_FromTimestamp")]
     pub Date_FromTimestamp:
         unsafe extern "C" fn(cls: *mut PyTypeObject, args: *mut PyObject) -> *mut PyObject,
     #[cfg(Py_3_6)]
@@ -337,6 +336,9 @@ extern "C" {
     pub fn PyDateTime_TIME_GET_MINUTE(o: *mut PyObject) -> c_int;
     #[cfg_attr(PyPy, link_name = "PyPyDateTime_TIME_GET_SECOND")]
     pub fn PyDateTime_TIME_GET_SECOND(o: *mut PyObject) -> c_int;
+
+    #[cfg_attr(PyPy, link_name = "PyPyDate_FromTimestamp")]
+    pub fn PyDate_FromTimestamp(args: *mut PyObject) -> *mut PyObject;
 }
 
 
