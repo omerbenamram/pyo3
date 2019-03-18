@@ -84,9 +84,13 @@ impl PyDate {
     /// This is equivalent to `datetime.date.fromtimestamp`
     pub fn from_timestamp(py: Python, timestamp: i64) -> PyResult<Py<PyDate>> {
         let args = PyTuple::new(py, &[timestamp]);
+        println!("{:?}", PyDateTimeAPI.Date_FromTimestamp);
+        println!("{:?}", PyDateTimeAPI.DateType);
+        println!("{:?}", args);
 
         unsafe {
             let ptr = (PyDateTimeAPI.Date_FromTimestamp)(PyDateTimeAPI.DateType, args.as_ptr());
+            println!("resp - {:?}", args);
             Py::from_owned_ptr_or_err(py, ptr)
         }
     }
