@@ -18,7 +18,6 @@ def test_double(x):
     assert othermod.double(x) == expected
 
 
-@pytest.mark.xfail(PYPY, reason="classes not properly working yet")
 def test_modclass():
     # Test that the repr of the class itself doesn't crash anything
     repr(othermod.ModClass)
@@ -26,7 +25,6 @@ def test_modclass():
     assert isinstance(othermod.ModClass, type)
 
 
-@pytest.mark.xfail(PYPY, reason="classes not properly working yet")
 def test_modclass_instance():
     mi = othermod.ModClass()
 
@@ -37,7 +35,6 @@ def test_modclass_instance():
     assert isinstance(mi, object)
 
 
-@pytest.mark.xfail(PYPY, reason="classes not properly working yet")
 @given(x=USIZE_ST)
 def test_modclas_noop(x):
     mi = othermod.ModClass()

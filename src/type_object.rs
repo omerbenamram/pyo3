@@ -405,6 +405,8 @@ where
     // set type flags
     py_class_flags::<T>(type_object);
 
+    println!("{:?}", *type_object);
+
     // register type object
     unsafe {
         if ffi::PyType_Ready(type_object) == 0 {

@@ -55,20 +55,7 @@ setup(
     rust_extensions=[
         RustExtension(
             "rustapi_module.othermod", "Cargo.toml", rustc_flags=get_py_version_cfgs()
-        ),
-        RustExtension(
-            "rustapi_module.datetime", "Cargo.toml", rustc_flags=get_py_version_cfgs()
-        ),
-        RustExtension(
-            "rustapi_module.subclassing",
-            "Cargo.toml",
-            rustc_flags=get_py_version_cfgs(),
-        ),
-        RustExtension(
-            "rustapi_module.test_dict",
-            "Cargo.toml",
-            rustc_flags=get_py_version_cfgs(),
-        ),
+        )
     ],
     install_requires=install_requires,
     tests_require=tests_require,
